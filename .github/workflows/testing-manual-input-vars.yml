@@ -9,12 +9,23 @@ on:
         - test
         - prod
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.environment == 'test' }}
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: greet
+      - name: greet test
+        run: | 
+          echo "environment is ${{ github.event.inputs.environment }}"
+  build-prod:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.environment == 'prod' }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: greet prod
         run: | 
           echo "environment is ${{ github.event.inputs.environment }}"
