@@ -1,4 +1,4 @@
-name: Testing Manual Input Variables
+name: Testing Manual Variables
 on:
   workflow_dispatch:
   input:
