@@ -1,11 +1,13 @@
-name: Testing Manual Variables
+name: Testing Manual Input Variables
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to run tests against'
         type: environment
-        required: true 
+        description: Select the environment
+        options:
+        - test
+        - prod
 jobs:
   build:
     runs-on: ubuntu-latest
