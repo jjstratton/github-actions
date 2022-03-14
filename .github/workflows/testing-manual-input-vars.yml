@@ -1,0 +1,20 @@
+name: Testing Manual Input Variables
+on:
+  workflow_dispatch:
+  inputs:
+      environment:
+        type: environment
+        description: Select the environment
+        options:
+        - test
+        - prod
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: greet
+        run: | 
+          echo "environment is ${{ github.event.inputs.environment }}"
