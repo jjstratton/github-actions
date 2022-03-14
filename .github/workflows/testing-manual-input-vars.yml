@@ -1,7 +1,7 @@
 name: Testing Manual Variables
 on:
   workflow_dispatch:
-  input:
+  inputs:
     environment:
       description: 'Environment to run tests against'
       type: environment
