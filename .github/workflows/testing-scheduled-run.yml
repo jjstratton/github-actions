@@ -1,4 +1,4 @@
-name: Testing Manual Input Variables
+name: Testing Scheduled Run
 on:
   schedule:
   # Every 5 mins
