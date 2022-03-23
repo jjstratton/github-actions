@@ -1,6 +1,6 @@
 name: Testing Scheduled Run
 on:
-  schedule:
+  #schedule:
   # Every 5 mins
   #  - cron: "*/5 * * * *"
 jobs:
