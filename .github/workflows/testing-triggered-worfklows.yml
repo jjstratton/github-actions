@@ -4,6 +4,7 @@ on:
     types: [completed]
 env: 
   WORKFLOW_NAME: ${{ github.event.workflow_run.name}}
+  WORKFLOW_URL: ${{ github.event.workflow_run.artifacts_url}}
 
 jobs:
   on-success:
@@ -13,6 +14,7 @@ jobs:
       - run: |
             echo 'The triggering workflow passed'
             echo $WORKFLOW_NAME
+            echo $WORKFLOW_URL
 
   on-failure:
     runs-on: ubuntu-latest
