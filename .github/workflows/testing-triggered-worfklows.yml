@@ -4,7 +4,7 @@ on:
     types: [completed]
 env: 
   WORKFLOW_NAME: ${{ github.event.workflow_run.name}}
-  WORKFLOW_URL: ${{ github.event.workflow_run.artifacts_url}}
+  WORKFLOW_URL: ${{ github.event.workflow_run.url}}
 
 jobs:
   on-success:
