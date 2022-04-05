@@ -2,13 +2,17 @@ on:
   workflow_run:
     workflows: [Testing Manual Input Variables]
     types: [completed]
+env: 
+  WORKFLOW_NAME: ${{ github.event.workflow_run.name}}
 
 jobs:
   on-success:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - run: echo 'The triggering workflow passed'
+      - run: |
+            echo 'The triggering workflow passed'
+            echo $WORKFLOW_NAME
 
   on-failure:
     runs-on: ubuntu-latest
