@@ -1,5 +1,5 @@
 name: Testing Scheduled Run
-#on:
+on:
   schedule:
   # Every 1 year
     - cron: "* * * 1 *"

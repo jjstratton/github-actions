@@ -1,3 +1,4 @@
+name: Testing Triggered Run
 on:
   workflow_run:
     workflows: [Testing Manual Input Variables]
@@ -17,7 +18,7 @@ jobs:
             echo $WORKFLOW_URL
 
       - name: "Directory"
-      - run: ls -lstra
+        run: ls -lstra
 
   on-failure:
     runs-on: ubuntu-latest
