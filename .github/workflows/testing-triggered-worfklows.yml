@@ -5,11 +5,11 @@ on:
 env: 
   WORKFLOW_NAME: ${{ github.event.workflow_run.name}}
   WORKFLOW_URL: ${{ github.event.workflow_run.html_url}}
-
+  WORKFLOW_STATUS: ${{ github.event.workflow_run.conclusion }}
 jobs:
   on-success:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ env.WORKFLOW_STATUS == 'success' }}
     steps:
       - run: |
             echo 'The triggering workflow passed'
