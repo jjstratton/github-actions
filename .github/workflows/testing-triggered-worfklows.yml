@@ -12,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+      - name: "Checkout GitHub Action"
+        uses: actions/checkout@master
+
       - run: |
             echo 'The triggering workflow passed'
             echo $WORKFLOW_NAME
             echo $WORKFLOW_URL
 
-      - name: "Checkout GitHub Action"
-        uses: actions/checkout@master
-        
       - name: "Directory"
         run: ls -lstra
 
