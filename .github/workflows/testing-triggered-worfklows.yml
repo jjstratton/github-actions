@@ -16,6 +16,13 @@ jobs:
             echo $WORKFLOW_NAME
             echo $WORKFLOW_URL
 
+      # checkout the repo
+      - name: "Checkout GitHub Action"
+        uses: actions/checkout@master
+
+      - name: "Directory"
+      - run: ls -lstra
+
   on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
