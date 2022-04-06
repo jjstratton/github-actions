@@ -1,8 +1,8 @@
 name: Testing Scheduled Run
 #on:
-  #schedule:
-  # Every 5 mins
-  #  - cron: "*/5 * * * *"
+  schedule:
+  # Every 1 year
+    - cron: "* * * 1 *"
 jobs:
   build-test:
     runs-on: ubuntu-latest
