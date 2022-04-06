@@ -19,6 +19,10 @@ jobs:
       - name: greet test
         run: | 
           echo "environment is ${{ github.event.inputs.environment }}"
+      
+      - name: "Directory"
+        run: ls -lstra
+        
   build-prod:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.environment == 'prod' }}
