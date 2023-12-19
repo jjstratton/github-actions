@@ -13,6 +13,7 @@ jobs:
 
       - name: message
         run: |
+          git fetch --tags
           RELEASE=$(git tag | sort -V | tail -1)
           echo "${RELEASE}"
  
