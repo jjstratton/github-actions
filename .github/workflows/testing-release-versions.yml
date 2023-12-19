@@ -1,4 +1,4 @@
-name: Testing Specific Path Push
+name: Testing Release Version
 on:
   push:
     branches: [main]
@@ -13,6 +13,6 @@ jobs:
 
       - name: message
         run: |
-          git tag | sort -V | tail -1
-          echo "It works"
+          RELEASE=$(git tag | sort -V | tail -1)
+          echo "${RELEASE}"
  
