@@ -2,7 +2,9 @@ name: Testing Scheduled Run
 on:
   schedule:
   # Every 1 year
-    - cron: "* * * 1 *"
+    - cron: '*/5 * * * *'
+  push:
+    branches: [main]
 jobs:
   build-test:
     runs-on: ubuntu-latest
