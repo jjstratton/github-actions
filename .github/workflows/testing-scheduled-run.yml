@@ -1,8 +1,8 @@
 name: Testing Scheduled Run
 on:
-  schedule:
+  #schedule:
   # Every 1 year
-    - cron: "*/5 * * * *"
+  #  - cron: "*/5 * * * *"
   push:
     branches: [main]
 jobs:
