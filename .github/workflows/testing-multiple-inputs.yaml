@@ -9,7 +9,7 @@ on:
         - test
         - prod
 env:
-  IMAGE_NAME: ${{ github.event.inputs.application }}
+  IMAGE_NAME: ${{ github.event.inputs.environment }}
 jobs:
   build:
     runs-on: ubuntu-latest
