@@ -23,6 +23,9 @@ jobs:
             echo "IMAGE_PREFIX=cc" >> $GITHUB_ENV
           elif [[ "${{ env.IMAGE_NAME }}" == "prod" ]]; then
             echo "IMAGE_PREFIX=fh" >> $GITHUB_ENV
+          else
+            echo "Unknown application"
+            exit 1
 
       - name: greet test
         run: | 
