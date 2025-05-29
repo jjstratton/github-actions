@@ -25,7 +25,7 @@ jobs:
             echo "IMAGE_PREFIX=fh" >> $GITHUB_ENV
           else
             echo "Unknown application"
-            exit 1
+          fi
 
       - name: greet test
         run: | 
