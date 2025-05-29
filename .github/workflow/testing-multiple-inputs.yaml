@@ -1,0 +1,33 @@
+name: Testing Multiple Input Variables
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Select the environment
+        options:
+        - test
+        - prod
+env:
+  IMAGE_NAME: ${{ github.event.inputs.application }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set Conditions
+        run: |
+          if [[ "${{ env.IMAGE_NAME }}" == "test" ]]; then
+            echo "IMAGE_PREFIX=cc" >> $GITHUB_ENV
+          elif [[ "${{ env.IMAGE_NAME }}" == "prod" ]]; then
+            echo "IMAGE_PREFIX=fh" >> $GITHUB_ENV
+
+      - name: greet test
+        run: | 
+          echo "environment is ${{ env.IMAGE_PREFIX }}"
+      
+      - name: "Directory"
+        run: ls -lstra
+        
